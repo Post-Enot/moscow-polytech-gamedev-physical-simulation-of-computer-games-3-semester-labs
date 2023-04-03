@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Labs.uss?fileID=7433441132597879392&amp;guid=0ccdded12d75815468cbf1052ec5f61f&amp;type=3#Labs" />
+    <ui:TwoPaneSplitView fixed-pane-initial-dimension="400" fixed-pane-index="1" orientation="Vertical" name="TwoPaneSplitView">
+        <ui:VisualElement name="screen-space" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);" />
+        <ui:VisualElement name="down-pane" class="down-panel__background" style="flex-grow: 1;">
+            <ui:VisualElement name="control-panel" class="down-panel__background" style="height: 60px; max-height: 60px; min-height: 60px; background-color: rgb(50, 50, 50); flex-direction: row;">
+                <ui:Button text="Запустить/перезапустить" display-tooltip-when-elided="true" name="start-button" class="control-panel__button" />
+                <ui:Button text="Остановить" display-tooltip-when-elided="true" name="stop-button" class="control-panel__button" />
+                <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-shrink: 1;" />
+                <ui:Button text="Назад" display-tooltip-when-elided="true" name="back-button" class="control-panel__button" />
+            </ui:VisualElement>
+            <ui:TwoPaneSplitView fixed-pane-initial-dimension="600" fixed-pane-index="0" orientation="Horizontal" name="container">
+                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="input-data-pane" style="padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px;">
+                    <ui:FloatField label="Высота, м" value="42,2" name="height-field" />
+                    <ui:FloatField label="Время придачи ускорения, с" value="42,2" name="time-offset-field" />
+                    <ui:FloatField label="Ускорение, м/с" value="42,2" name="acceleration-field" />
+                    <ui:FloatField label="Угол к горизонту, град" value="42,2" name="angle-to-the-horizon-field" />
+                </ui:ScrollView>
+                <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1" name="output-data-pane" style="padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 15px;">
+                    <ui:FloatField label="Время, с" value="42,2" name="time-field" readonly="true" />
+                    <ui:FloatField label="Время полёта, с" value="42,2" name="flight-time-field" readonly="true" />
+                    <ui:FloatField label="Средняя скорость, м/с" value="42,2" name="average-speed-field" readonly="true" />
+                    <ui:FloatField label="Скорость в момент приземления, м/с" value="42,2" name="landing-speed-field" readonly="true" />
+                    <ui:FloatField label="Дальность полёта, м" value="42,2" name="distance-field" />
+                </ui:ScrollView>
+            </ui:TwoPaneSplitView>
+        </ui:VisualElement>
+    </ui:TwoPaneSplitView>
+</ui:UXML>
